@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.actionSets">
+      <actionSet
+            description="TUIO GUI"
+            id="net.sf.ubq.draw2d.renderer.tuioActionSet"
+            label="TUIO GUI"
+            visible="true">
+         <action
+               class="net.sf.ubq.draw2d.renderer.actions.LaunchTuioGUI"
+               icon="icons/ubqt.png"
+               id="net.sf.ubq.draw2d.renderer.tuioLaunchAction"
+               label="Ubiquisense"
+               style="toggle"
+               toolbarPath="tuio">
+         </action>
+         <menu
+               icon="icons/categories/preferences-desktop.png"
+               id="net.sf.ubq.draw2d.renderer.tuioMenu"
+               label="tuio"
+               path="tuio">
+         </menu>
+         <action
+               class="net.sf.ubq.draw2d.renderer.actions.LaunchTuioFMURF"
+               icon="icons/ubiquisense.gif"
+               id="net.sf.ubq.draw2d.renderer.launchFMURFAction"
+               label="FMURF"
+               style="push"
+               toolbarPath="tuio">
+         </action>
+         <action
+               class="net.sf.ubq.draw2d.renderer.actions.LaunchIannix"
+               icon="icons/iannix.png"
+               id="net.sf.ubq.draw2d.renderer.launchIannixAction"
+               label="Iannix"
+               style="push"
+               toolbarPath="tuio">
+         </action>
+         <action
+               class="net.sf.ubq.draw2d.renderer.actions.LaunchTuioSimulator"
+               icon="icons/tuio.png"
+               id="net.sf.ubq.draw2d.renderer.launchIannixAction"
+               label="TUIO Simulator"
+               style="push"
+               toolbarPath="tuioSim">
+         </action>
+         <action
+               class="net.sf.ubq.draw2d.renderer.actions.LaunchREACTIVISION"
+               icon="icons/reactivision.jpg"
+               id="net.sf.ubq.draw2d.renderer.launchIannixAction"
+               label="Reactivision Video Capture"
+               style="push"
+               toolbarPath="tuioSim">
+         </action>
+         <action
+               class="net.sf.ubq.draw2d.renderer.actions.LaunchCHUCK"
+               icon="icons/chuck.jpg"
+               id="net.sf.ubq.draw2d.renderer.launchIannixAction"
+               label="MiniAudicle (chuck)"
+               style="push"
+               toolbarPath="tuioSim">
+         </action>
+      </actionSet>
+   </extension>
+
+<!-- editor ubiquisense launch action -->
+
+<extension point="org.eclipse.ui.popupMenus"> 
+<viewerContribution 
+      id="net.sf.smbt.ubqt.presentation.UbqtLaunchApp"
+   targetID="net.sf.smbt.ubqt.presentation.UbqtEditorID"> 
+   <action
+         id="org.eclipse.ui.articles.action.contribution.editor.action1" 
+         label="Launch As Ubiquisense"
+         icon="icons/ubiquisense.gif"
+      menubarPath="additions" 
+      class="net.sf.ubq.draw2d.renderer.utils.LaunchUbiquisenseTuioApp"> 
+      </action>
+   <action
+         class="net.sf.ubq.draw2d.renderer.utils.LaunchUbiquisenseFmurfApp"
+         icon="icons/ubiquisense.gif"
+         id="org.eclipse.ui.articles.action.contribution.editor.action1"
+         label="Launch As FMURF"
+         menubarPath="additions">
+   </action> 
+   </viewerContribution> 
+</extension>
+</plugin>

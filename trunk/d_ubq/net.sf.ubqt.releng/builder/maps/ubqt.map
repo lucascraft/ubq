@@ -1,0 +1,73 @@
+! *** fwk ***
+
+feature@net.sf.xqz.fwk=COPY,LOCAL_SRC_REPO,net.sf.xqz.fwk-feature
+plugin@net.sf.xqz.engine=COPY,LOCAL_SRC_REPO,net.sf.xqz.engine
+plugin@net.sf.xqz.engine.edit=COPY,LOCAL_SRC_REPO,net.sf.xqz.engine.edit
+plugin@net.sf.xqz.script=COPY,LOCAL_SRC_REPO,net.sf.xqz.script
+
+! *** ui ***
+
+feature@net.sf.xqz.engine.ui=COPY,LOCAL_SRC_REPO,net.sf.xqz.engine.ui-feature
+plugin@net.sf.xqz.engine.ui=COPY,LOCAL_SRC_REPO,net.sf.xqz.engine.ui
+plugin@net.sf.xqz.script.ui=COPY,LOCAL_SRC_REPO,net.sf.xqz.script
+
+! *** rcp ***
+
+feature@net.sf.xqz.rcp=COPY,LOCAL_SRC_REPO,net.sf.xqz.rcp-feature
+plugin@net.sf.xqz.rcp=COPY,LOCAL_SRC_REPO,net.sf.xqz.rcp
+
+! *** tests ***
+
+feature@net.sf.xqz.tests=COPY,LOCAL_SRC_REPO,net.sf.xqz.tests-feature
+plugin@net.sf.xqz.tests.engine=COPY,LOCAL_SRC_REPO,net.sf.xqz.tests.engine
+
+! *** examples ***
+
+feature@net.sf.xqz.engine.examples=COPY,LOCAL_SRC_REPO,net.sf.xqz.engine.examples-feature
+plugin@net.sf.xqz.engine.examples=COPY,LOCAL_SRC_REPO,net.sf.xqz.engine.examples
+
+! *** smart ambient ***
+
+feature@net.sf.smbt.core=COPY,LOCAL_SRC_REPO,net.sf.smbt.core-feature
+plugin@net.sf.smbt.colors=COPY,LOCAL_SRC_REPO,net.sf.smbt.colors
+plugin@net.sf.smbt.comm=COPY,LOCAL_SRC_REPO,net.sf.smbt.comm
+plugin@net.sf.smbt.comm.script.config=COPY,LOCAL_SRC_REPO,net.sf.smbt.comm.script.config
+plugin@net.sf.smbt.comm.script.config.ui=COPY,LOCAL_SRC_REPO,net.sf.smbt.comm.script.config.ui
+plugin@net.sf.smbt.comm.ui=COPY,LOCAL_SRC_REPO,net.sf.smbt.comm.ui
+plugin@net.sf.smbt.dmx=COPY,LOCAL_SRC_REPO,net.sf.smbt.dmx
+plugin@net.sf.smbt.3d=COPY,LOCAL_SRC_REPO,net.sf.smbt.3d
+plugin@net.sf.smbt.gestures=COPY,LOCAL_SRC_REPO,net.sf.smbt.gestures
+plugin@net.sf.smbt.midi=COPY,LOCAL_SRC_REPO,net.sf.smbt.midi
+plugin@net.sf.smbt.minuit=COPY,LOCAL_SRC_REPO,net.sf.smbt.minuit
+plugin@net.sf.smbt.motion=COPY,LOCAL_SRC_REPO,net.sf.smbt.motion
+plugin@net.sf.smbt.osc=COPY,LOCAL_SRC_REPO,net.sf.smbt.osc
+plugin@net.sf.smbt.osc.md8=COPY,LOCAL_SRC_REPO,net.sf.smbt.osc.md8
+plugin@net.sf.smbt.osc.script=COPY,LOCAL_SRC_REPO,net.sf.smbt.osc.script
+plugin@net.sf.smbt.osc.script.generator=COPY,LOCAL_SRC_REPO,net.sf.smbt.osc.script.generator
+plugin@net.sf.smbt.osc.script.ui=COPY,LOCAL_SRC_REPO,net.sf.smbt.osc.script.ui
+plugin@net.sf.smbt.osc.wiimote=COPY,LOCAL_SRC_REPO,net.sf.smbt.osc.wiimote
+plugin@net.sf.smbt.quantic=COPY,LOCAL_SRC_REPO,net.sf.smbt.quantic
+plugin@net.sf.smbt.tcp=COPY,LOCAL_SRC_REPO,net.sf.smbt.tcp
+plugin@net.sf.smbt.ui=COPY,LOCAL_SRC_REPO,net.sf.smbt.ui
+plugin@net.sf.ubq.draw2d.renderer=COPY,LOCAL_SRC_REPO,net.sf.ubq.draw2d.renderer
+plugin@net.sf.ubq.interface=COPY,LOCAL_SRC_REPO,net.sf.ubq.interface
+plugin@net.sf.ubq.mtgui=COPY,LOCAL_SRC_REPO,net.sf.ubq.mtgui
+plugin@net.sf.ubq.script=COPY,LOCAL_SRC_REPO,net.sf.ubq.script
+plugin@net.sf.ubq.script.ui=COPY,LOCAL_SRC_REPO,net.sf.ubq.script.ui
+plugin@net.sf.ubq.tuio.client=COPY,LOCAL_SRC_REPO,net.sf.ubq.tuio.client
+
+
+
+
+
+feature@net.sf.smbt.i2c=COPY,LOCAL_SRC_REPO/smbt/fwk,net.sf.smbt.i2c-feature
+plugin@net.sf.smbt.i2c=COPY,LOCAL_SRC_REPO/smbt/fwk,net.sf.smbt.i2c
+plugin@net.sf.smbt.i2c.devices=COPY,LOCAL_SRC_REPO/smbt/fwk,net.sf.smbt.i2c.devices
+net.sf.smbt.i2c.wii.nunchuck
+
+
+feature@net.sf.smbt.i2c.thingm=COPY,LOCAL_SRC_REPO/smbt/fwk,net.sf.smbt.i2c.thingm-feature
+plugin@net.sf.smbt.i2c.thingm=COPY,LOCAL_SRC_REPO/smbt/fwk,net.sf.smbt.i2c.thingm
+plugin@net.sf.smbt.i2c.thingm.ui=COPY,LOCAL_SRC_REPO/smbt/fwk,net.sf.smbt.i2c.thingm.ui
+
+

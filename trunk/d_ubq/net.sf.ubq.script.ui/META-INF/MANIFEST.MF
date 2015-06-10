@@ -1,0 +1,34 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: net.sf.ubq.script.ui
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: net.sf.ubq.script.ui; singleton:=true
+Eclipse-RegisterBuddy: org.eclipse.xtext.log4j
+Bundle-ActivationPolicy: lazy
+Require-Bundle: net.sf.ubq.script;visibility:=reexport,
+ org.apache.log4j,
+ org.eclipse.xtext.ui,
+ org.eclipse.ui.editors;bundle-version="3.4.0",
+ org.eclipse.ui.ide;bundle-version="3.4.0",
+ org.eclipse.ui,
+ org.antlr.runtime,
+ net.sf.xqz.script;bundle-version="1.0.0",
+ net.sf.xqz.script.ui;bundle-version="1.0.0",
+ net.sf.smbt.comm.script.config.ui;bundle-version="1.0.0",
+ org.eclipse.xtext.ui,
+ org.eclipse.xtext.ui.shared
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: net.sf.ubq.script,
+ net.sf.ubq.script.contentassist,
+ net.sf.ubq.script.internal,
+ net.sf.ubq.script.outline,
+ net.sf.ubq.script.ui,
+ net.sf.ubq.script.ui.contentassist,
+ net.sf.ubq.script.ui.contentassist.antlr,
+ net.sf.ubq.script.ui.contentassist.antlr.internal,
+ net.sf.ubq.script.ui.internal,
+ net.sf.ubq.script.ui.labeling,
+ net.sf.ubq.script.ui.outline
+Bundle-Activator: net.sf.ubq.script.ui.internal.UbqtActivator
+Import-Package: org.apache.log4j

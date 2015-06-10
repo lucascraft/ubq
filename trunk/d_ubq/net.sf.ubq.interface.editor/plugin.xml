@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="net.sf.smbt.ubqt.presentation.UbqtModelWizardID"
+            name="Ubiquisense GUI "
+            class="net.sf.smbt.ubqt.presentation.UbqtModelWizard"
+            category="net.sf.smbt.ui"
+            icon="icons/ubiquisense.gif">
+         <description>%_UI_UbqtModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="net.sf.smbt.ubqt.presentation.UbqtEditorID"
+            name="Ubiquisense GUI Editor"
+            icon="icons/full/obj16/UbqtModelFile.gif"
+            extensions="ubqt"
+            class="net.sf.smbt.ubqt.presentation.UbqtEditor"
+            contributorClass="net.sf.smbt.ubqt.presentation.UbqtActionBarContributor">
+      </editor>
+   </extension>
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+      
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertyContributor" id="prop-ubqt-contrib">
+      <propertyContributor
+            contributorId="net.sf.ubq.interface"
+            labelProvider="net.sf.ubq.mt.editor.UbqtSheetLabelProvider">
+         <propertyCategory category="proximaType"/>
+      </propertyContributor>
+   </extension>
+
+  <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs" id="proptabs.proxima.style">
+      <propertyTabs contributorId="net.sf.ubq.interface">
+		  <propertyTab
+          category="proximaType"
+          id="property.tab.proxima.style"
+          image="icons/ubiquisense.gif"
+          label="Preview"/>
+     </propertyTabs>
+  </extension>
+
+  <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs" id="proptabs.proxima.props">
+      <propertyTabs contributorId="net.sf.ubq.interface">
+		  <propertyTab
+          category="proximaType"
+          id="property.tab.proxima.props"
+          image="icons/ubiquisense.gif"
+          label="Values"/>
+     </propertyTabs>
+  </extension>
+  
+  
+  
+
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections" id="propsections-ubqt">
+      <propertySections contributorId="net.sf.ubq.interface">
+
+       <propertySection
+            id="property.section.ubiquisense.ubqt.properties.proximaType" 
+            tab="property.tab.proxima.style"
+            class="net.sf.ubq.mt.editor.ProximaPropertySection"
+        >
+            <input type="net.sf.smbt.ubqt.UbqProxima"/>
+       </propertySection>
+       
+       <!-- props -->
+      <propertySection
+            id="property.section.ubiquisense.ubqt.properties.proximaType" 
+            tab="property.tab.proxima.props"
+            class="net.sf.ubq.mt.editor.SessionWidthPropertySection"
+        >
+            <input type="net.sf.smbt.ubqt.UbqPoint"/>
+       </propertySection>
+       <propertySection
+            id="property.section.ubiquisense.ubqt.properties.proximaType" 
+            tab="property.tab.proxima.props"
+            class="net.sf.ubq.mt.editor.SessionHeightPropertySection"
+        >
+            <input type="net.sf.smbt.ubqt.UbqPoint"/>
+       </propertySection>
+        <propertySection
+            id="property.section.ubiquisense.ubqt.properties.proximaType" 
+            tab="property.tab.proxima.props"
+            class="net.sf.ubq.mt.editor.ProximaRadiusPropertySection"
+        >
+            <input type="net.sf.smbt.ubqt.UbqProxima"/>
+       </propertySection>
+       <propertySection
+            id="property.section.ubiquisense.ubqt.properties.proximaType" 
+            tab="property.tab.proxima.props"
+            class="net.sf.ubq.mt.editor.ProximaIDPropertySection"
+        >
+            <input type="net.sf.smbt.ubqt.UbqProxima"/>
+       </propertySection>
+       <propertySection
+            id="property.section.ubiquisense.ubqt.properties.proximaType" 
+            tab="property.tab.proxima.props"
+            class="net.sf.ubq.mt.editor.ProximaLimitPropertySection"
+        >
+            <input type="net.sf.smbt.ubqt.UbqProxima"/>
+       </propertySection>
+      <propertySection
+            id="property.section.ubiquisense.ubqt.properties.proximaType" 
+            tab="property.tab.proxima.props"
+            class="net.sf.ubq.mt.editor.ProximaFGColorPropertySection"
+        >
+            <input type="net.sf.smbt.ubqt.UbqProxima"/>
+       </propertySection>
+      <propertySection
+            id="property.section.ubiquisense.ubqt.properties.proximaType" 
+            tab="property.tab.proxima.props"
+            class="net.sf.ubq.mt.editor.ProximaBGColorPropertySection"
+        >
+            <input type="net.sf.smbt.ubqt.UbqProxima"/>
+       </propertySection>
+       
+       <!-- incremental range min/max (step) -->
+      <propertySection
+            id="property.section.ubiquisense.ubqt.properties.proximaType" 
+            tab="property.tab.proxima.props"
+            class="net.sf.ubq.mt.editor.ProximaRangeMinPropertySection"
+        >
+            <input type="net.sf.smbt.ubqt.UbqIncrementableRange"/>
+       </propertySection>
+      <propertySection
+            id="property.section.ubiquisense.ubqt.properties.proximaType" 
+            tab="property.tab.proxima.props"
+            class="net.sf.ubq.mt.editor.ProximaRangeMaxPropertySection"
+        >
+            <input type="net.sf.smbt.ubqt.UbqIncrementableRange"/>
+       </propertySection>
+       
+    
+    
+    
+	
+      </propertySections>
+   </extension>
+   
+
+</plugin>

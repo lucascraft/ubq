@@ -1,0 +1,93 @@
+<smurf>
+<settings>
+<OscSendAddress>localhost</OscSendAddress>
+<OscSendPort>4449</OscSendPort>
+<OscReceivePort>4448</OscReceivePort>
+<TuioPort>3333</TuioPort>
+</settings>
+
+<fid>
+<id>0</id>
+<style>DISC</style>
+<kind>SIN_OSC</kind>
+<BG>128, 128, 255</BG>
+<FG>0, 128, 64</FG>
+<radius>50</radius>
+<proxima>100</proxima>
+<proximaVisible>True</proximaVisible>
+<range>100</range>
+<function>KNOB</function>
+</fid>
+<fid>
+<id>1</id>
+<style>DISC</style>
+<kind>SIN_OSC</kind>
+<BG>0, 255, 255</BG>
+<FG>0, 0, 255</FG>
+<radius>50</radius>
+<proxima>110</proxima>
+<proximaVisible>True</proximaVisible>
+<range>100</range>
+<function>KNOB</function>
+</fid>
+<fid>
+<id>2</id>
+<style>DISC</style>
+<kind>SIN_OSC</kind>
+<BG>255, 125, 125</BG>
+<FG>125, 125, 125</FG>
+<radius>50</radius>
+<proxima>120</proxima>
+<proximaVisible>True</proximaVisible>
+<range>100</range>
+<function>KNOB</function>
+</fid>
+<fid>
+<id>3</id>
+<style>DISC</style>
+<kind>SIN_OSC</kind>
+<BG>255, 128, 255</BG>
+<FG>255, 0, 128</FG>
+<radius>50</radius>
+<proxima>150</proxima>
+<proximaVisible>True</proximaVisible>
+<range>100</range>
+<function>KNOB</function>
+</fid>
+<fid>
+<id>4</id>
+<style>DISC</style>
+<kind>SIN_OSC</kind>
+<BG>0, 255, 128</BG>
+<FG>255, 255, 0</FG>
+<radius>50</radius>
+<proxima>100</proxima>
+<proximaVisible>True</proximaVisible>
+<range>100</range>
+<function>KNOB</function>
+</fid>
+<fid>
+<id>5</id>
+<style>DISC</style>
+<kind>SIN_OSC</kind>
+<BG>255, 0, 128</BG>
+<FG>255, 128, 0</FG>
+<radius>50</radius>
+<proxima>100</proxima>
+<proximaVisible>True</proximaVisible>
+<range>100</range>
+<function>KNOB</function>
+</fid>
+<fid>
+<id>6</id>
+<style>DISC</style>
+<kind>SIN_OSC</kind>
+<BG>0, 128, 255</BG>
+<FG>0, 255, 0</FG>
+<radius>75</radius>
+<proxima>160</proxima>
+<proximaVisible>True</proximaVisible>
+<range>100</range>
+<function>KNOB</function>
+</fid>
+</smurf>

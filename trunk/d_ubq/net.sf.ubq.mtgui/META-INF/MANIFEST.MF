@@ -1,0 +1,20 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Mtgui
+Bundle-SymbolicName: net.sf.ubq.mtgui; singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ net.sf.ubq.interface,
+ org.eclipse.core.resources;bundle-version="3.6.0",
+ org.eclipse.ui.ide;bundle-version="3.6.0",
+ org.eclipse.ui.console;bundle-version="3.5.0",
+ org.eclipse.ui.views;bundle-version="3.5.0",
+ org.eclipse.emf.ecore,
+ net.sf.ubq.draw2d.renderer,
+ org.eclipse.ui.intro,
+ net.sf.smbt.quantic
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: net.sf.ubq.interfaces.gui.actions,
+ net.sf.ubq.util.gui
