@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.debug.core.launchConfigurationTypes">
+      <launchConfigurationType
+            delegate="net.sf.ubq.launch.mtgui.UbqtLaunchConfigurationDelegate"
+            delegateName="Ubqt Launch Delegate"
+            id="net.sf.ubq.launch.launchConfigurationType"
+            name="Ubqt Launch">
+      </launchConfigurationType>
+   </extension>
+   <extension
+         point="org.eclipse.debug.core.launchDelegates">
+      <launchDelegate
+            delegate="net.sf.ubq.launch.mtgui.UbqtLaunchConfigurationDelegate"
+            delegateDescription="run an Ubqt session"
+            id="net.sf.ubq.launch.launchDelegate"
+            name="Ubqt Launch Delegate"
+            type="net.sf.ubq.launch.launchConfigurationType">
+      </launchDelegate>
+   </extension>
+   <extension
+         point="org.eclipse.debug.ui.launchConfigurationTabs">
+      <tab
+            class="net.sf.ubq.launch.mtgui.UbqtLaunchConfigurationTab"
+            group="net.sf.ubq.launch.ubqtLaunchConfigurationTabGroup"
+            id="net.sf.ubq.launch.UbqAppSelectionTab"
+            name="Ubqt Tab">
+      </tab>
+   </extension>
+   <extension
+         point="org.eclipse.debug.ui.launchConfigurationTabGroups">
+      <launchConfigurationTabGroup
+            class="net.sf.ubq.launch.mtgui.UbqtLaunchConfigurationTabGroup"
+            id="net.sf.ubq.launch.ubqtLaunchConfigurationTabGroup"
+            type="net.sf.ubq.launch.launchConfigurationType">
+      </launchConfigurationTabGroup>
+   </extension>
+   <extension
+         point="org.eclipse.debug.ui.launchGroups">
+      <launchGroup
+            id="net.sf.ubq.launch.ubqtLaunchGroup"
+            image="/icons/ubqt-run.png"
+            bannerImage="/icons/ubqt-run.png"
+            label="Ubqt"
+            mode="run">
+      </launchGroup>
+   </extension>
+
+</plugin>

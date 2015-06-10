@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Ubiquisense And Iannix native Linux X86
+Bundle-SymbolicName: net.sf.ubq.interface.linux.x86
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: ubiquisense.com
+Fragment-Host: net.sf.ubq.interface;bundle-version="1.0.0"
+Eclipse-PlatformFilter: (& (osgi.os=linux) (osgi.arch=x86))

@@ -1,0 +1,426 @@
+/***********************************************************************************
+ * UBQT - A ubiquitous computing utilities framework 
+ * 
+ * Copyright (c) 2008 - 2010, Lucas Bigeardel
+ * 
+ * The library is released under:
+ * 
+ * A) LGPL
+ * 
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 3 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General
+ * Public License along with this library; if not, write to the
+ * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+ * Boston, MA 02110-1301 USA
+ * 
+ * B) EPL
+ * 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *     Lucas Bigeardel <lucas.bigeardel@gmail.com> - Initial API and implementation
+ ***********************************************************************************/
+
+grammar net.sf.ubq.script.Ubqt with net.sf.xqz.engine.script.Orchestror
+
+import "http://www.sf.net/xqz/engine/script/Orchestror" as OrchestrorMM
+import "platform:/resource/net.sf.smbt.comm.script.config/src-gen/net/sf/smbt/comm/script/NetConf.ecore" as NetConfMM
+import "http://www.eclipse.org/emf/2002/Ecore" as ecoreMM
+
+generate ubqt "http://www.sf.net/ubq/script/Ubqt"
+
+UbqSession:
+  (netconfs+=NetConfImport)*
+  (orchestrors+=OrchestrorImport)+
+  (displayMode=UbqDisplayMode)
+  (fiducials+=UbqFiducial)*
+  (actions+=UbqAction)*
+  (reactions+=UbqReaction)*
+  (emmiters+=UbqEmmitedActions)*
+  (handlers+=UbqHandledReactions)*
+  /*
+  (menuItems+=UbqMenuItem)*
+  (artifacts+=UbqComposite)*
+  */
+  (slots+=UbqSlot)*
+  (proximi+=UbqProxima)+
+  (fingers+=UbqCursor)*
+;
+
+OrchestrorImport :
+  'orchestror' importURI=STRING ';'
+;
+
+NetConfImport :
+  'netconf' importURI=STRING ';'
+;
+
+UbqDisplayMode:
+  'display' mode=UbqPoint ';'
+;
+
+UbqAction :
+  'action' name=ID 'trigger' actionIDs+=STRING (',' actionIDs+=STRING)* ('args' args+=STRING (',' args+=STRING)*)? ';'
+;
+
+UbqReaction :
+  'reaction' name=ID 'handles' cmdIDs+=STRING (',' cmdIDs+=STRING)* 'with' clazz=STRING ';'
+;
+
+UbqFiducial :
+  'fiducial' name=ID 'code' fidcode=INT ';'
+;
+
+/*
+UbqReactionHandler :
+  'handler' name=ID 'use' clazz=STRING ';'
+;
+*/
+
+UbqProxima :
+  'proxima' name=ID 'maps' fiducial=[UbqFiducial] 'to' engine=[OrchestrorMM::DSLEngineClient] 
+  'range' range=UbqIncrementableRange?
+  ('bounds' bounds=UbqBounds)? 
+  ('radius' radius=INT)?  
+  ('angle' angle=INT)? 
+  ('status' status=PROXIMA_STATUS)?
+  ('requires' (requiredProximi+=[UbqProxima])(',' requiredProximi+=[UbqProxima])*)?
+  ( '{'
+  	 (slots+=[UbqSlot](',' slots+=[UbqSlot])* ';')? 
+  	 (emitted+=UbqEmmitedActions)*
+  	 (reacted+=UbqHandledReactions)*
+  '}')? ';'
+;
+
+
+UbqHandledReactions :
+  'handles' (reactions+=[UbqReaction])(',' reactions+=[UbqReaction])*  
+  ('with' (proximiAsRef+=[UbqProxima])(',' proximiAsRef+=[UbqProxima])*)?
+  ';'
+;
+
+
+UbqEmmitedActions :
+  'emits' (actions+=[UbqAction])(',' actions+=[UbqAction])* 
+  'on' (events+=UBQ_EVENTS)(',' events+=UBQ_EVENTS)* 
+  ('with' (proximiAsRef+=[UbqProxima])(',' proximiAsRef+=[UbqProxima])*)?
+  ';'
+;
+
+UbqSlot :
+  'slot' name=ID   
+  (bounds=UbqBounds)? // (width, length) 
+  'in' position=SLOTS 
+  'kind' kind=SLOT_KIND 
+  'status' status=SLOT_STATUS
+  ('{'
+  	 (emitted+=UbqEmmitedActions)*
+  	 (reacted+=UbqHandledReactions)*
+  '}')? ';'
+;
+
+enum SLOT_STATUS :
+  SELECTED |
+  UNSELECTED/* |
+  DISABLED*/
+;
+
+enum SLOT_KIND : 
+  PUSH /*| 
+  TOGGLE | 
+  CHECKBOX | 
+  RADIO*/
+;
+
+enum PROXIMA_STATUS : 
+  DEACTIVATED | 
+  ACTIVATED |
+  DISABLED
+;
+
+enum SLOTS :
+  P0 | 
+  P23 | P45 | P67 | P90 |
+  P113 | P135 | P157 | P180 |
+  P203 | P225 | P247 | P270 |
+  P293 | P315 | P337
+;
+
+UbqLayout :
+  'layout' kind=UBQ_LAYOUT_KIND
+  /* (data+=[UBQ_GRID_LAYOUT_DATA]('|' data+=[UBQ_GRID_LAYOUT_DATA])*)? */
+;
+
+enum UBQ_LAYOUT_KIND :
+  /* UBQ_GRID_LAYOUT |*/
+  UBQ_ROW_LAYOUT |
+  UBQ_FILL_LAYOUT
+;
+
+/*
+enum UBQ_GRID_LAYOUT_DATA :
+  UBQ_GRID_LAYOUT_FILL_HORIZONTAL |
+  UBQ_GRID_LAYOUT_FILL_VERTICAL |
+  UBQ_GRID_LAYOUT_FILL_BOTH |
+  UBQ_GRID_LAYOUT_ALIGN_BEGIN |
+  UBQ_GRID_LAYOUT_ALIGN_CENTER |
+  UBQ_GRID_LAYOUT_ALIGN_END |
+  UBQ_GRID_LAYOUT_ALIGN_TOP |
+  UBQ_GRID_LAYOUT_ALIGN_BOTTOM |
+  UBQ_GRID_LAYOUT_ALIGN_MIDDLE
+;
+*/
+
+enum UBQ_EVENTS :
+  PROXIMA_ADD | 
+  PROXIMA_REMOVE |
+  PROXIMA_UPDATE | 
+  CURSOR_ADD | 
+  CURSOR_REMOVE |
+  CURSOR_UPDATE |
+  WIDGET_SELECTION |
+  WIDGET_DOWN |
+  WIDGET_UP |
+  WIDGET_DRAG |
+  WIDGET_ENTER |
+  WIDGET_LEAVE |
+  WIDGET_HOVER |
+  INPUT_CMD_ADD
+;
+
+enum UBQ_GESTURES : 
+	ONE_SINGLE_TAP |
+	ONE_DOUBLE_TAP |
+	ONE_TRIPLE_TAP |
+	TWO_SINGLE_TAP |
+	TWO_DOUBLE_TAP |
+	TWO_TRIPLE_TAP |
+	ONE_HOLD |
+	TWO_HOLD |
+	THREE_HOLD |
+	ONE_DRAG |
+	TWO_DRAG |
+	THREE_DRAG |
+	ONE_HOLD_ONE_DRAG |
+	ONE_HOLD_TWO_DRAG |
+	TWO_HOLD_ONE_DRAG |
+	ONE_HOLD_ONE_SINGLE_TAP |
+	ONE_HOLD_TWO_SINGLE_TAP |
+	ONE_HOLD_ONE_DOUBLE_TAP |
+	ONE_HOLD_TWO_DOUBLE_TAP |
+	ONE_HOLD_ONE_TRIPLE_TAP |
+	ONE_HOLD_TWO_TRIPLE_TAP |
+	VALID |
+	DISCARDED
+;
+/*
+UBGui:
+  (colors+=UBColor)*
+  (colorStyles+=UBColorStyle)*
+  (widgetStyles+=UBWidgetStyle)*
+  (elements+=(UBComposite|UBWidget))*
+;
+*/
+
+UbqCursor: 
+  'cursor' name=ID pos=UbqPoint 'dimension' dim=UbqPoint ';'
+;
+
+UbqComposite:
+  'composite' name=ID bounds=UbqBounds (layout=UbqLayout)? (';' | ('{' 
+    children+=(UbqComposite|UbqWidget)*  
+  '}'))
+;
+
+UbqPoint:
+ '(' x=INT ',' y=INT ')'
+;
+ 
+UbqBounds:
+  '(' x=INT ',' y=INT ',' width=INT ',' height=INT ')'
+;
+
+//
+//
+// Widgets
+//
+//
+UbqWidget:
+  (  UbqButton | 
+     UbqLabel | 
+     UbqCheckbox /*| 
+     UbqText | 
+     UbqSlider | 
+     UbqSpinner | 
+     UbqVuMeter |
+     UbqMenu | 
+     UbqImage | 
+     UbqKnob */ 
+  ) 
+  ('in' parent=[UbqComposite])?
+  (bounds=UbqBounds)? 
+  ('angle' angle=INT)?
+  ('style' style=(UbqWidgetStyle|[UbqWidgetStyle]))? 
+  ('{'
+  	 (emitted+=UbqEmmitedActions)*
+  	 (reacted=UbqHandledReactions)*
+  '}')? ';'
+;
+
+UbqImage:
+  'image' name=ID 'src' image=STRING
+;
+
+UbqButton:
+  'button' name=ID ('text' text=STRING)? ('image' image=STRING)?
+;
+
+UbqLabel:
+  'label' name=ID 'text' text=STRING 
+;
+
+UbqCheckbox:
+  'checkbox' name=ID (checked?='checked')?
+;
+
+UbqText:
+  'text' name=ID 'text' text=STRING 
+;
+
+UbqMenu:
+  'menu' name=ID 
+    ('{' 
+      children+=(UbqMenu|UbqMenuItem)+ 
+    '}')? 
+  ';'
+;
+
+//
+//
+// Menu items are not UbqWidgets
+//
+//
+UbqMenuItem:
+  'menuitem' name=ID 'title' title=STRING ('{'
+  	 (emitted+=UbqEmmitedActions)*
+  '}')? ';'  
+;
+
+//
+//
+// Incrementables
+//
+//
+
+UbqIncrementableRange :
+  '[' min=INT '..' max=INT /*(':' increment=INT)?*/ ('init' val=INT)? ']'
+;
+
+UbqVuMeter:
+  'vumeter' name=ID rangeDefinition=UbqIncrementableRange
+;
+
+UbqSpinner:
+  'spinner' name=ID rangeDefinition=UbqIncrementableRange
+;
+
+UbqSlider:
+  'slider' name=ID rangeDefinition=UbqIncrementableRange
+;
+
+UbqKnob : 
+  'knob' name=ID  rangeDefinition=UbqIncrementableRange
+;
+
+//
+//
+// Styles related stuff
+//
+//
+UbqWidgetStyle:
+  'widget:style {'
+    (colorStyle = UbqColorStyle)?
+    (fontStyleStyle = UbqFontStyle)?
+    (borderStyle = UbqBorderStyle)?
+  '}'
+;
+
+UbqColorStyle:
+  'style:color {'
+    ('foreground:' foreground=UbqColor ';')?
+    ('background:' background=UbqColor ';')?
+  '}'
+;
+
+UbqFontStyle:
+  'style:font {'
+    ('font:' font=STRING ';')?
+    ('height:' height=INT ';')?
+    ('style:' styles+=FONT_STYLE('|' (styles+=FONT_STYLE))* ';')?
+  '}'
+;
+
+enum FONT_STYLE : BOLD | ITALIC | STRIKED | NORMAL;
+
+UbqBorderStyle:
+  'style:border {'
+    ('tickness:' tickness=INT ';')?
+    ('style:' styles+=BORDER_STYLE('|' (styles+=BORDER_STYLE))* ';')?
+  '}'
+;
+
+enum BORDER_STYLE : DASHED | NORMAL;
+
+/*
+UbqShape:
+  (
+    UbqRectangle |
+    UbqCircle |
+    UbqDisk |
+    UbqTriangle
+  )
+  bounds=UbqBounds
+;
+
+UbqRectangle:
+  'rectangle' 
+;
+
+UbqCircle:
+  'circle'
+;
+
+UbqDisk:
+  'disk'
+;
+
+UbqTriangle:
+  'triangle'
+;
+*/
+
+UbqColor:
+  /* UbqHsbColor | */ UbqRgbColor
+;
+
+UbqHsbColor:
+   'hsb' '[' hue=Float ',' saturation=Float ',' brightness=Float ']'
+;
+
+UbqRgbColor:
+   'rgb' '[' red=INT ',' green=INT ',' blue=INT ']'
+;
+
+Float returns ecoreMM::EDouble : INT ('.' INT)?;

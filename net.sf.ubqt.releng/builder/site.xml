@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <description name="ubqt" url="http://www.ubqt.tv">
+   </description>
+   <feature url="features/net.sf.xqz.engine.ui_1.0.0.jar" id="net.sf.xqz.engine.ui" version="1.0.0"/>
+   <feature url="features/net.sf.xqz.fwk_1.0.0.jar" id="net.sf.xqz.fwk" version="1.0.0"/>
+   <feature url="features/net.sf.xqz.rcp_1.0.0.jar" id="net.sf.xqz.rcp" version="1.0.0"/>
+   <feature url="features/net.sf.xqz.tests_1.0.0.jar" id="net.sf.xqz.tests" version="1.0.0"/>
+   <feature url="features/net.sf.smbt.core_1.0.0.jar" id="net.sf.smbt.core" version="1.0.0" os="linux,macosx,win32" ws="cocoa,gtk,win32" arch="ppc,x86,x86_64"/>
+   <feature url="features/net.sf.smbt.i2c_1.0.0.jar" id="net.sf.smbt.i2c" version="1.0.0"/>
+   <feature url="features/net.sf.smbt.i2c.thingm_1.0.0.jar" id="net.sf.smbt.i2c.thingm" version="1.0.0"/>
+   <feature url="features/net.sf.smbt.ui_1.0.0.qualifier.jar" id="net.sf.smbt.ui" version="1.0.0.qualifier"/>
+   <feature url="features/net.sf.ubq_1.0.0.qualifier.jar" id="net.sf.ubq" version="1.0.0.qualifier" os="" ws="" arch=""/>
+</site>

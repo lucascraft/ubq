@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.actionSets">
+      <actionSet
+            id="net.sf.ubq.interfaces.gui.actionSet"
+            label="Sample Action Set"
+            visible="true">
+         <menu
+               id="TUIOMultitouch"
+               label="TUIO Multitouch">
+            <separator
+                  name="tuioGroup">
+            </separator>
+         </menu>
+         <action
+               class="net.sf.ubq.interfaces.gui.actions.UbqtMTGuiLaunchAction"
+               icon="icons/categories/preferences-desktop.png"
+               id="net.sf.ubq.interfaces.gui.actions.UbqtMTGuiLauncnAction"
+               label="Launch TUIO 2D UI"
+               menubarPath="TUIOMultitouch/tuioGroup"
+               toolbarPath="tuioGroup"
+               tooltip="Launch TUIO 2D UI">
+         </action>
+      </actionSet>
+   </extension>
+
+</plugin>

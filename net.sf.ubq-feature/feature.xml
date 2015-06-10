@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+/***********************************************************************************
+ * UBQT - A ubiquitous computing utilities framework 
+ * 
+ * Copyright (c) 2008 - 2014, Lucas Bigeardel
+ * 
+ * The library is released under:
+ * 
+ * A) LGPL
+ * 
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 3 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General
+ * Public License along with this library; if not, write to the
+ * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+ * Boston, MA 02110-1301 USA
+ * 
+ * B) EPL
+ * 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *     Lucas Bigeardel <lucas.bigeardel@gmail.com> - Initial API and implementation
+ ***********************************************************************************/
+
+-->
+<feature
+      id="net.sf.ubq"
+      label="Multitouch GUI For TUIO 1.0"
+      version="0.5.0.qualifier"
+      provider-name="ubiquisense.com"
+      plugin="net.sf.smbt.ui"
+      os="linux,macosx,win32"
+      arch="x86,x86_64">
+
+   <description url="http://ubiquisense.com/p/ubiquisense/description/description.html">
+      TUIO MultiTouch GUIs and Iannix Sequencer Integration
+   </description>
+
+   <copyright url="http://ubiquisense.com/p/ubiquisense/copyright/copyright.html">
+      Ubiquisense - A smart ambient utilities framework
+      Copyright (c) 2008 - 2014, Lucas Bigeardel
+   </copyright>
+
+   <license url="http://www.ubqt.tv/p/ubq/license">
+      Ubiquisense - A smart ambient utilities framework 
+ 
+ Copyright (c) 2008 - 2014, Lucas Bigeardel
+ 
+ The library is released under:
+ 
+ A) LGPL
+ 
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free Software Foundation; either
+ version 3 of the License, or (at your option) any later version.
+ 
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+ 
+ You should have received a copy of the GNU Lesser General
+ Public License along with this library; if not, write to the
+ Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+ Boston, MA 02110-1301 USA
+ 
+ B) EPL
+ 
+ All rights reserved. This program and the accompanying materials
+ are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+ 
+ Contributors:
+     Lucas Bigeardel (lucas.bigeardel@gmail.com) - Initial API and implementation
+   </license>
+
+   <url>
+      <update label="Ubiquisense Updates" url="http://ubiquisense.com/p/ubiquisense/updates/0.5.1/site.xml"/>
+   </url>
+
+   <includes
+         id="net.sf.smbt.core"
+         version="0.0.0"/>
+
+   <includes
+         id="net.sf.smbt.ui"
+         version="0.0.0"/>
+
+   <includes
+         id="net.sf.xqz.fwk"
+         version="0.0.0"/>
+
+   <includes
+         id="net.sf.xqz.ui"
+         version="0.0.0"/>
+
+   <requires>
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.gef" version="3.4.1" match="greaterOrEqual"/>
+      <import plugin="org.lwjgl" version="2.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.emf.ecore" match="greaterOrEqual"/>
+      <import plugin="net.sf.xqz.engine"/>
+      <import plugin="net.sf.smbt.osc.tuio"/>
+      <import plugin="net.sf.smbt.ui"/>
+      <import plugin="org.eclipse.core.resources" version="3.8.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.jdt" version="3.8.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.jdt.launching" version="3.6.101" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.debug.core" version="3.7.100" match="greaterOrEqual"/>
+      <import plugin="net.sf.xqz.script"/>
+      <import plugin="net.sf.smbt.comm"/>
+      <import plugin="org.eclipse.draw2d"/>
+      <import plugin="net.sf.xqz.engine.edit"/>
+      <import plugin="net.sf.smbt.quantic" version="0.5.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui" version="3.8.2" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.navigator" version="3.5.200" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.navigator.resources" version="3.4.400" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.ide" version="3.8.2" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.emf.edit"/>
+      <import plugin="net.sf.smbt.xcp" version="0.5.0" match="greaterOrEqual"/>
+      <import plugin="net.sf.xqz.engine" version="0.5.0" match="greaterOrEqual"/>
+      <import plugin="net.sf.smbt.xcp.edit" version="0.5.0" match="greaterOrEqual"/>
+      <import plugin="net.sf.xqz.engine.edit" version="0.5.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.emf.ecore.xmi"/>
+      <import plugin="org.eclipse.emf.edit.ui"/>
+      <import plugin="org.eclipse.emf.ecoretools.tabbedproperties" version="1.1.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.views.properties.tabbed" version="3.5.300" match="greaterOrEqual"/>
+      <import plugin="net.sf.smbt.ui" version="0.5.0" match="greaterOrEqual"/>
+      <import plugin="net.sf.ubq.interface" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.emf.ecore.edit" match="greaterOrEqual"/>
+   </requires>
+
+   <plugin
+         id="net.sf.ubq.draw2d.renderer"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+   <plugin
+         id="net.sf.ubq.interface"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="net.sf.ubq.interface.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="net.sf.ubq.interface.editor"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.lwjgl"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+   <plugin
+         id="net.sf.ubq.interface.macosx.x86_64"
+         os="macosx"
+         arch="x86_64"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         fragment="true"/>
+
+   <plugin
+         id="net.sf.ubq.interface.win32.x86"
+         os="win32"
+         arch="x86"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         fragment="true"/>
+
+   <plugin
+         id="net.sf.ubq.interface.linux.x86"
+         os="linux"
+         arch="x86"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         fragment="true"/>
+
+   <plugin
+         id="net.sf.ubq.interface.linux.x86_64"
+         os="linux"
+         arch="x86_64"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         fragment="true"/>
+
+   <plugin
+         id="net.sf.ubq.interface.macosx.x86"
+         os="macosx"
+         arch="x86"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         fragment="true"/>
+
+   <plugin
+         id="net.sf.ubq.interface.win32.x86_64"
+         os="win32"
+         arch="x86_64"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         fragment="true"/>
+
+</feature>

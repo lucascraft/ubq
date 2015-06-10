@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+
+<!--
+
+/***********************************************************************************
+ * UBQT - A ubiquitous computing utilities framework 
+ * 
+ * Copyright (c) 2008 - 2010, Lucas Bigeardel
+ * 
+ * The library is released under:
+ * 
+ * A) LGPL
+ * 
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 3 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General
+ * Public License along with this library; if not, write to the
+ * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+ * Boston, MA 02110-1301 USA
+ * 
+ * B) EPL
+ * 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *     Lucas Bigeardel <lucas.bigeardel@gmail.com> - Initial API and implementation
+ ***********************************************************************************/
+
+-->
+
+<plugin>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <category
+            id="net.sf.ubq.ui"
+            name="Ubqt">
+      </category>
+      <wizard
+            category="net.sf.ubq.ui"
+            class="net.sf.ubq.ui.wizards.UbqtProjectNewWizard"
+            icon="icons/categories/applications-system.png"
+            id="net.sf.ubq.ui.wizards.UbqtProjectNewWizard"
+            name="New Ubqt Project">
+      </wizard>
+      <category
+            id="net.sf.ubq.ui.wiimote"
+            name="Ubqt Wiimote">
+      </category>
+      <wizard
+            category="net.sf.ubq.ui.wiimote"
+            class="net.sf.ubq.ui.wiimote.wizards.UbqtWiimoteMonitoringNewWizard"
+            icon="icons/communication/network-wireless.png"
+            id="net.sf.ubq.ui.wiimote.wizards.UbqtWiimoteMonitoringNewWizard"
+            name="Wiimote Monitoring">
+      </wizard>
+   </extension>
+
+   <!--
+   -->
+      <extension
+            id="net.sf.ubqt.projectNature"
+            name="Ubqt Nature"
+            point="org.eclipse.core.resources.natures">
+      <runtime>
+         <run
+               class="net.sf.smbt.ui.infra.UbqtNature">
+         </run>
+      </runtime>
+   </extension>
+   <extension
+         point="org.eclipse.ui.ide.projectNatureImages">
+      <image
+            icon="icons/apps/utilities-system-monitor.png"
+            id="net.sf.ubqt.natureImage"
+            natureId="net.sf.ubqt.projectNature">
+      </image>
+      <image
+            icon="icons/communication/network-wireless.png"
+            id="net.sf.ubqt.overlayImage"
+            natureId="net.sf.ubqt.projectNature">
+      </image>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            id="net.sf.ubq.ui.wiimote"
+            name="Ubqt Category">
+      </category>
+      <view
+            category="net.sf.ubq.ui.wiimote"
+            class="net.sf.ubq.ui.wiimote.views.WiimoteView"
+            icon="icons/communication/network-wireless.png"
+            id="net.sf.ubq.ui.wiimote.views.WiimoteView"
+            name="Wiimote View">
+      </view>
+   </extension>
+   <!--
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            class="net.sf.ubq.ui.multieditor.UbqMultiEditor"
+            contributorClass="net.sf.ubq.ui.multieditor.UbqMultiEditorContributor"
+            extensions="xbq"
+            icon="icons/sample.gif"
+            id="net.sf.ubq.ui.multieditor.UbqMultiEditor"
+            name="Ubqt Multi-page Editor">
+      </editor>
+   </extension>
+   -->
+   <extension
+         point="org.eclipse.ui.actionSets">
+      <actionSet
+            id="net.sf.ubq.ui.actionSet"
+            label="Sample Action Set"
+            visible="true">
+         <menu
+               id="sampleMenu"
+               label="Sample &amp;Menu">
+            <separator
+                  name="sampleGroup">
+            </separator>
+         </menu>
+         <action
+               class="net.sf.ubq.ui.wiimote.actions.WiimoteMonitorAction"
+               icon="icons/communication/network-wireless.png"
+               id="net.sf.ubq.ui.wiimote.actions.WiimoteMonitorAction"
+               label="&amp;Sample Action"
+               menubarPath="sampleMenu/sampleGroup"
+               toolbarPath="sampleGroup"
+               tooltip="Hello, Eclipse world">
+         </action>
+      </actionSet>
+   </extension>
+</plugin>

@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/net.sf.ubq.script/src-gen"
+    editDirectory="/net.sf.ubq.script.edit/src" editorDirectory="/net.sf.ubq.script.editor/src"
+    modelPluginID="net.sf.ubq.script" forceOverwrite="true" modelName="Ubqt" updateClasspath="false"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" complianceLevel="5.0"
+    copyrightFields="false" editPluginID="net.sf.ubq.script.edit" editorPluginID="net.sf.ubq.script.editor"
+    usedGenPackages="../../../../../../net.sf.xqz.script/src-gen/net/sf/xqz/engine/script/Orchestror.genmodel#//orchestror ../../../../../../net.sf.smbt.comm.script.config/src-gen/net/sf/smbt/comm/script/NetConf.genmodel#//netConf">
+  <genPackages prefix="Ubqt" basePackage="net.sf.ubq.script" disposableProviderFactory="true"
+      ecorePackage="Ubqt.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Ubqt.ecore#//SLOT_STATUS">
+      <genEnumLiterals ecoreEnumLiteral="Ubqt.ecore#//SLOT_STATUS/SELECTED"/>
+      <genEnumLiterals ecoreEnumLiteral="Ubqt.ecore#//SLOT_STATUS/UNSELECTED"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Ubqt.ecore#//SLOT_KIND">
+      <genEnumLiterals ecoreEnumLiteral="Ubqt.ecore#//SLOT_KIND/PUSH"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Ubqt.ecore#//PROXIMA_STATUS">
+      <genEnumLiterals ecoreEnumLiteral="Ubqt.ecore#//PROXIMA_STATUS/DEACTIVATED"/>
+      <genEnumLiterals ecoreEnumLiteral="Ubqt.ecore#//PROXIMA_STATUS/ACTIVATED"/>
+      <genEnumLiterals ecoreEnumLiteral="Ubqt.ecore#//PROXIMA_STATUS/DISABLED"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Ubqt.ecore#//SLOTS">
+      <genEnumLiterals ecoreEnumLiteral="Ubqt.ecore#//SLOTS/P0"/>
+      <genEnumLiterals ecoreEnumLiteral="Ubqt.ecore#//SLOTS/P23"/>
+      <genEnumLiterals ecoreEnumLiteral="Ubqt.ecore#//SLOTS/P45"/>
+      <genEnumLiterals ecoreEnumLiteral="Ubqt.ecore#//SLOTS/P67"/>
+      <genEnumLiterals ecoreEnumLiteral="Ubqt.ecore#//SLOTS/P90"/>
+      <genEnumLiterals ecoreEnumLiteral="Ubqt.ecore#//SLOTS/P113"/>
+      <genEnumLiterals ecoreEnumLiteral="Ubqt.ecore#//SLOTS/P135"/>
+      <genEnumLiterals ecoreEnumLiteral="Ubqt.ecore#//SLOTS/P157"/>
+      <genEnumLiterals ecoreEnumLiteral="Ubqt.ecore#//SLOTS/P180"/>
+      <genEnumLiterals ecoreEnumLiteral="Ubqt.ecore#//SLOTS/P203"/>
+      <genEnumLiterals ecoreEnumLiteral="Ubqt.ecore#//SLOTS/P225"/>
+      <genEnumLiterals ecoreEnumLiteral="Ubqt.ecore#//SLOTS/P247"/>
+      <genEnumLiterals ecoreEnumLiteral="Ubqt.ecore#//SLOTS/P270"/>
+      <genEnumLiterals ecoreEnumLiteral="Ubqt.ecore#//SLOTS/P293"/>
+      <genEnumLiterals ecoreEnumLiteral="Ubqt.ecore#//SLOTS/P315"/>
+      <genEnumLiterals ecoreEnumLiteral="Ubqt.ecore#//SLOTS/P337"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Ubqt.ecore#//UBQ_LAYOUT_KIND">
+      <genEnumLiterals ecoreEnumLiteral="Ubqt.ecore#//UBQ_LAYOUT_KIND/UBQ_ROW_LAYOUT"/>
+      <genEnumLiterals ecoreEnumLiteral="Ubqt.ecore#//UBQ_LAYOUT_KIND/UBQ_FILL_LAYOUT"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Ubqt.ecore#//UBQ_EVENTS">
+      <genEnumLiterals ecoreEnumLiteral="Ubqt.ecore#//UBQ_EVENTS/PROXIMA_ADD"/>
+      <genEnumLiterals ecoreEnumLiteral="Ubqt.ecore#//UBQ_EVENTS/PROXIMA_REMOVE"/>
+      <genEnumLiterals ecoreEnumLiteral="Ubqt.ecore#//UBQ_EVENTS/PROXIMA_UPDATE"/>
+      <genEnumLiterals ecoreEnumLiteral="Ubqt.ecore#//UBQ_EVENTS/CURSOR_ADD"/>
+      <genEnumLiterals ecoreEnumLiteral="Ubqt.ecore#//UBQ_EVENTS/CURSOR_REMOVE"/>
+      <genEnumLiterals ecoreEnumLiteral="Ubqt.ecore#//UBQ_EVENTS/CURSOR_UPDATE"/>
+      <genEnumLiterals ecoreEnumLiteral="Ubqt.ecore#//UBQ_EVENTS/WIDGET_SELECTION"/>
+      <genEnumLiterals ecoreEnumLiteral="Ubqt.ecore#//UBQ_EVENTS/WIDGET_DOWN"/>
+      <genEnumLiterals ecoreEnumLiteral="Ubqt.ecore#//UBQ_EVENTS/WIDGET_UP"/>
+      <genEnumLiterals ecoreEnumLiteral="Ubqt.ecore#//UBQ_EVENTS/WIDGET_DRAG"/>
+      <genEnumLiterals ecoreEnumLiteral="Ubqt.ecore#//UBQ_EVENTS/WIDGET_ENTER"/>
+      <genEnumLiterals ecoreEnumLiteral="Ubqt.ecore#//UBQ_EVENTS/WIDGET_LEAVE"/>
+      <genEnumLiterals ecoreEnumLiteral="Ubqt.ecore#//UBQ_EVENTS/WIDGET_HOVER"/>
+      <genEnumLiterals ecoreEnumLiteral="Ubqt.ecore#//UBQ_EVENTS/INPUT_CMD_ADD"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Ubqt.ecore#//UBQ_GESTURES">
+      <genEnumLiterals ecoreEnumLiteral="Ubqt.ecore#//UBQ_GESTURES/ONE_SINGLE_TAP"/>
+      <genEnumLiterals ecoreEnumLiteral="Ubqt.ecore#//UBQ_GESTURES/ONE_DOUBLE_TAP"/>
+      <genEnumLiterals ecoreEnumLiteral="Ubqt.ecore#//UBQ_GESTURES/ONE_TRIPLE_TAP"/>
+      <genEnumLiterals ecoreEnumLiteral="Ubqt.ecore#//UBQ_GESTURES/TWO_SINGLE_TAP"/>
+      <genEnumLiterals ecoreEnumLiteral="Ubqt.ecore#//UBQ_GESTURES/TWO_DOUBLE_TAP"/>
+      <genEnumLiterals ecoreEnumLiteral="Ubqt.ecore#//UBQ_GESTURES/TWO_TRIPLE_TAP"/>
+      <genEnumLiterals ecoreEnumLiteral="Ubqt.ecore#//UBQ_GESTURES/ONE_HOLD"/>
+      <genEnumLiterals ecoreEnumLiteral="Ubqt.ecore#//UBQ_GESTURES/TWO_HOLD"/>
+      <genEnumLiterals ecoreEnumLiteral="Ubqt.ecore#//UBQ_GESTURES/THREE_HOLD"/>
+      <genEnumLiterals ecoreEnumLiteral="Ubqt.ecore#//UBQ_GESTURES/ONE_DRAG"/>
+      <genEnumLiterals ecoreEnumLiteral="Ubqt.ecore#//UBQ_GESTURES/TWO_DRAG"/>
+      <genEnumLiterals ecoreEnumLiteral="Ubqt.ecore#//UBQ_GESTURES/THREE_DRAG"/>
+      <genEnumLiterals ecoreEnumLiteral="Ubqt.ecore#//UBQ_GESTURES/ONE_HOLD_ONE_DRAG"/>
+      <genEnumLiterals ecoreEnumLiteral="Ubqt.ecore#//UBQ_GESTURES/ONE_HOLD_TWO_DRAG"/>
+      <genEnumLiterals ecoreEnumLiteral="Ubqt.ecore#//UBQ_GESTURES/TWO_HOLD_ONE_DRAG"/>
+      <genEnumLiterals ecoreEnumLiteral="Ubqt.ecore#//UBQ_GESTURES/ONE_HOLD_ONE_SINGLE_TAP"/>
+      <genEnumLiterals ecoreEnumLiteral="Ubqt.ecore#//UBQ_GESTURES/ONE_HOLD_TWO_SINGLE_TAP"/>
+      <genEnumLiterals ecoreEnumLiteral="Ubqt.ecore#//UBQ_GESTURES/ONE_HOLD_ONE_DOUBLE_TAP"/>
+      <genEnumLiterals ecoreEnumLiteral="Ubqt.ecore#//UBQ_GESTURES/ONE_HOLD_TWO_DOUBLE_TAP"/>
+      <genEnumLiterals ecoreEnumLiteral="Ubqt.ecore#//UBQ_GESTURES/ONE_HOLD_ONE_TRIPLE_TAP"/>
+      <genEnumLiterals ecoreEnumLiteral="Ubqt.ecore#//UBQ_GESTURES/ONE_HOLD_TWO_TRIPLE_TAP"/>
+      <genEnumLiterals ecoreEnumLiteral="Ubqt.ecore#//UBQ_GESTURES/VALID"/>
+      <genEnumLiterals ecoreEnumLiteral="Ubqt.ecore#//UBQ_GESTURES/DISCARDED"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Ubqt.ecore#//FONT_STYLE">
+      <genEnumLiterals ecoreEnumLiteral="Ubqt.ecore#//FONT_STYLE/BOLD"/>
+      <genEnumLiterals ecoreEnumLiteral="Ubqt.ecore#//FONT_STYLE/ITALIC"/>
+      <genEnumLiterals ecoreEnumLiteral="Ubqt.ecore#//FONT_STYLE/STRIKED"/>
+      <genEnumLiterals ecoreEnumLiteral="Ubqt.ecore#//FONT_STYLE/NORMAL"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Ubqt.ecore#//BORDER_STYLE">
+      <genEnumLiterals ecoreEnumLiteral="Ubqt.ecore#//BORDER_STYLE/DASHED"/>
+      <genEnumLiterals ecoreEnumLiteral="Ubqt.ecore#//BORDER_STYLE/NORMAL"/>
+    </genEnums>
+    <genClasses ecoreClass="Ubqt.ecore#//UbqSession">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ubqt.ecore#//UbqSession/netconfs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ubqt.ecore#//UbqSession/orchestrors"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ubqt.ecore#//UbqSession/displayMode"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ubqt.ecore#//UbqSession/fiducials"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ubqt.ecore#//UbqSession/actions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ubqt.ecore#//UbqSession/reactions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ubqt.ecore#//UbqSession/emmiters"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ubqt.ecore#//UbqSession/handlers"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ubqt.ecore#//UbqSession/slots"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ubqt.ecore#//UbqSession/proximi"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ubqt.ecore#//UbqSession/fingers"/>
+    </genClasses>
+    <genClasses ecoreClass="Ubqt.ecore#//OrchestrorImport">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ubqt.ecore#//OrchestrorImport/importURI"/>
+    </genClasses>
+    <genClasses ecoreClass="Ubqt.ecore#//NetConfImport">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ubqt.ecore#//NetConfImport/importURI"/>
+    </genClasses>
+    <genClasses ecoreClass="Ubqt.ecore#//UbqDisplayMode">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ubqt.ecore#//UbqDisplayMode/mode"/>
+    </genClasses>
+    <genClasses ecoreClass="Ubqt.ecore#//UbqAction">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ubqt.ecore#//UbqAction/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ubqt.ecore#//UbqAction/actionIDs"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ubqt.ecore#//UbqAction/args"/>
+    </genClasses>
+    <genClasses ecoreClass="Ubqt.ecore#//UbqReaction">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ubqt.ecore#//UbqReaction/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ubqt.ecore#//UbqReaction/cmdIDs"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ubqt.ecore#//UbqReaction/clazz"/>
+    </genClasses>
+    <genClasses ecoreClass="Ubqt.ecore#//UbqFiducial">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ubqt.ecore#//UbqFiducial/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ubqt.ecore#//UbqFiducial/fidcode"/>
+    </genClasses>
+    <genClasses ecoreClass="Ubqt.ecore#//UbqProxima">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ubqt.ecore#//UbqProxima/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Ubqt.ecore#//UbqProxima/fiducial"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Ubqt.ecore#//UbqProxima/engine"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ubqt.ecore#//UbqProxima/range"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ubqt.ecore#//UbqProxima/bounds"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ubqt.ecore#//UbqProxima/radius"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ubqt.ecore#//UbqProxima/angle"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ubqt.ecore#//UbqProxima/status"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Ubqt.ecore#//UbqProxima/requiredProximi"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Ubqt.ecore#//UbqProxima/slots"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ubqt.ecore#//UbqProxima/emitted"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ubqt.ecore#//UbqProxima/reacted"/>
+    </genClasses>
+    <genClasses ecoreClass="Ubqt.ecore#//UbqHandledReactions">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Ubqt.ecore#//UbqHandledReactions/reactions"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Ubqt.ecore#//UbqHandledReactions/proximiAsRef"/>
+    </genClasses>
+    <genClasses ecoreClass="Ubqt.ecore#//UbqEmmitedActions">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Ubqt.ecore#//UbqEmmitedActions/actions"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ubqt.ecore#//UbqEmmitedActions/events"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Ubqt.ecore#//UbqEmmitedActions/proximiAsRef"/>
+    </genClasses>
+    <genClasses ecoreClass="Ubqt.ecore#//UbqSlot">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ubqt.ecore#//UbqSlot/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ubqt.ecore#//UbqSlot/bounds"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ubqt.ecore#//UbqSlot/position"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ubqt.ecore#//UbqSlot/kind"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ubqt.ecore#//UbqSlot/status"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ubqt.ecore#//UbqSlot/emitted"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ubqt.ecore#//UbqSlot/reacted"/>
+    </genClasses>
+    <genClasses ecoreClass="Ubqt.ecore#//UbqLayout">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ubqt.ecore#//UbqLayout/kind"/>
+    </genClasses>
+    <genClasses ecoreClass="Ubqt.ecore#//UbqCursor">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ubqt.ecore#//UbqCursor/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ubqt.ecore#//UbqCursor/pos"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ubqt.ecore#//UbqCursor/dim"/>
+    </genClasses>
+    <genClasses ecoreClass="Ubqt.ecore#//UbqComposite">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ubqt.ecore#//UbqComposite/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ubqt.ecore#//UbqComposite/bounds"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ubqt.ecore#//UbqComposite/layout"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ubqt.ecore#//UbqComposite/children"/>
+    </genClasses>
+    <genClasses ecoreClass="Ubqt.ecore#//UbqPoint">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ubqt.ecore#//UbqPoint/x"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ubqt.ecore#//UbqPoint/y"/>
+    </genClasses>
+    <genClasses ecoreClass="Ubqt.ecore#//UbqBounds">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ubqt.ecore#//UbqBounds/x"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ubqt.ecore#//UbqBounds/y"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ubqt.ecore#//UbqBounds/width"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ubqt.ecore#//UbqBounds/height"/>
+    </genClasses>
+    <genClasses ecoreClass="Ubqt.ecore#//UbqWidget">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Ubqt.ecore#//UbqWidget/parent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ubqt.ecore#//UbqWidget/bounds"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ubqt.ecore#//UbqWidget/angle"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ubqt.ecore#//UbqWidget/style"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ubqt.ecore#//UbqWidget/emitted"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ubqt.ecore#//UbqWidget/reacted"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ubqt.ecore#//UbqWidget/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Ubqt.ecore#//UbqImage">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ubqt.ecore#//UbqImage/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ubqt.ecore#//UbqImage/image"/>
+    </genClasses>
+    <genClasses ecoreClass="Ubqt.ecore#//UbqButton">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ubqt.ecore#//UbqButton/text"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ubqt.ecore#//UbqButton/image"/>
+    </genClasses>
+    <genClasses ecoreClass="Ubqt.ecore#//UbqLabel">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ubqt.ecore#//UbqLabel/text"/>
+    </genClasses>
+    <genClasses ecoreClass="Ubqt.ecore#//UbqCheckbox">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ubqt.ecore#//UbqCheckbox/checked"/>
+    </genClasses>
+    <genClasses ecoreClass="Ubqt.ecore#//UbqText">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ubqt.ecore#//UbqText/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ubqt.ecore#//UbqText/text"/>
+    </genClasses>
+    <genClasses ecoreClass="Ubqt.ecore#//UbqMenu">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ubqt.ecore#//UbqMenu/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ubqt.ecore#//UbqMenu/children"/>
+    </genClasses>
+    <genClasses ecoreClass="Ubqt.ecore#//UbqMenuItem">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ubqt.ecore#//UbqMenuItem/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ubqt.ecore#//UbqMenuItem/title"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ubqt.ecore#//UbqMenuItem/emitted"/>
+    </genClasses>
+    <genClasses ecoreClass="Ubqt.ecore#//UbqIncrementableRange">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ubqt.ecore#//UbqIncrementableRange/min"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ubqt.ecore#//UbqIncrementableRange/max"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ubqt.ecore#//UbqIncrementableRange/val"/>
+    </genClasses>
+    <genClasses ecoreClass="Ubqt.ecore#//UbqVuMeter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ubqt.ecore#//UbqVuMeter/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ubqt.ecore#//UbqVuMeter/rangeDefinition"/>
+    </genClasses>
+    <genClasses ecoreClass="Ubqt.ecore#//UbqSpinner">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ubqt.ecore#//UbqSpinner/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ubqt.ecore#//UbqSpinner/rangeDefinition"/>
+    </genClasses>
+    <genClasses ecoreClass="Ubqt.ecore#//UbqSlider">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ubqt.ecore#//UbqSlider/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ubqt.ecore#//UbqSlider/rangeDefinition"/>
+    </genClasses>
+    <genClasses ecoreClass="Ubqt.ecore#//UbqKnob">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ubqt.ecore#//UbqKnob/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ubqt.ecore#//UbqKnob/rangeDefinition"/>
+    </genClasses>
+    <genClasses ecoreClass="Ubqt.ecore#//UbqWidgetStyle">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ubqt.ecore#//UbqWidgetStyle/colorStyle"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ubqt.ecore#//UbqWidgetStyle/fontStyleStyle"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ubqt.ecore#//UbqWidgetStyle/borderStyle"/>
+    </genClasses>
+    <genClasses ecoreClass="Ubqt.ecore#//UbqColorStyle">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ubqt.ecore#//UbqColorStyle/foreground"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ubqt.ecore#//UbqColorStyle/background"/>
+    </genClasses>
+    <genClasses ecoreClass="Ubqt.ecore#//UbqFontStyle">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ubqt.ecore#//UbqFontStyle/font"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ubqt.ecore#//UbqFontStyle/height"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ubqt.ecore#//UbqFontStyle/styles"/>
+    </genClasses>
+    <genClasses ecoreClass="Ubqt.ecore#//UbqBorderStyle">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ubqt.ecore#//UbqBorderStyle/tickness"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ubqt.ecore#//UbqBorderStyle/styles"/>
+    </genClasses>
+    <genClasses ecoreClass="Ubqt.ecore#//UbqColor"/>
+    <genClasses ecoreClass="Ubqt.ecore#//UbqHsbColor">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ubqt.ecore#//UbqHsbColor/hue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ubqt.ecore#//UbqHsbColor/saturation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ubqt.ecore#//UbqHsbColor/brightness"/>
+    </genClasses>
+    <genClasses ecoreClass="Ubqt.ecore#//UbqRgbColor">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ubqt.ecore#//UbqRgbColor/red"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ubqt.ecore#//UbqRgbColor/green"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ubqt.ecore#//UbqRgbColor/blue"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

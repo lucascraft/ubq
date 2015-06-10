@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<plugin>
+
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package 
+       uri = "http://www.sf.net/ubq/script/Ubqt" 
+       class = "net.sf.ubq.script.ubqt.UbqtPackage"
+       genModel = "net/sf/ubq/script/Ubqt.genmodel" /> 
+	
+  </extension>
+
+
+
+
+</plugin>
