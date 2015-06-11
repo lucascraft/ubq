@@ -35,51 +35,15 @@
 
 package net.sf.ubq.ui.wiimote.views;
 
-import java.util.List;
-import java.util.Map;
-
-import net.sf.smbt.comm.script.config.utils.INetCfgUtil;
-import net.sf.smbt.comm.script.config.utils.NetCfgUtilsModule;
-import net.sf.smbt.comm.script.config.utils.NetConfigUtil;
-import net.sf.smbt.comm.script.netConf.NetCfg;
-import net.sf.smbt.osc.md8.cmd.handlers.Md8OscCmdEventHandler;
-import net.sf.smbt.osc.md8.utils.Md8OscCmdUtils;
-import net.sf.smbt.osc.wiimote.cmd.handlers.WiimoteOscCmdHandler;
-import net.sf.smbt.osc.wiimote.model.wiimote.WiiAccelPryCmd;
-import net.sf.smbt.osc.wiimote.model.wiimote.WiimoteCmd;
-import net.sf.smbt.osc.wiimote.model.wiimote.WiimoteFactory;
-import net.sf.smbt.osc.wiimote.model.wiimote.WiimoteLiveSettings;
-import net.sf.smbt.osc.wiimote.model.wiimote.WiimoteMonitor;
-import net.sf.xqz.engine.orchestror.utils.OrcherstrorClockJob;
-import net.sf.xqz.model.engine.CmdPipe;
-import net.sf.xqz.model.engine.EVENT_KIND;
-import net.sf.xqz.model.engine.Event;
-import net.sf.xqz.model.temporal.Orchestror;
-
-import org.eclipse.core.resources.IFile;
-import org.eclipse.core.runtime.Status;
-import org.eclipse.swt.SWT;
-import org.eclipse.swt.events.PaintEvent;
-import org.eclipse.swt.events.PaintListener;
-import org.eclipse.swt.layout.FillLayout;
-import org.eclipse.swt.widgets.Canvas;
-import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.Display;
-import org.eclipse.ui.part.ViewPart;
-
-import com.google.inject.Guice;
-import com.google.inject.Injector;
 
 
-public class WiimoteView extends ViewPart {
+public class WiimoteView { /*extends ViewPart {
 	private Canvas scope;
 	private WiimoteMonitor monitor;
 	private CmdPipe engine;
 	private int step;
 	
-	/**
-	 * The ID of the view as specified by the extension.
-	 */
+	
 	public static final String ID = "net.sf.ubq.ui.wiimote.views.WiimoteView";
 	private float[] array;
 
@@ -157,7 +121,7 @@ public class WiimoteView extends ViewPart {
 							//System.err.println("Wii Acell PRY [pitch:"+pitch+"][roll:"+roll+"][yaw:"+yaw+"]");
 							//System.err.println("Wii Acell PRY [pitch:"+p+"][roll:"+r+"][yaw:"+y+"]");
 							//System.err.println("Wii Acell Roll PRY [roll:"+roll+"]");
-						}/* else if (cmd instanceof WiiAccelXYZCmd) {
+						} else if (cmd instanceof WiiAccelXYZCmd) {
 							float x = ((WiiAccelXYZCmd)cmd).getX();
 							float y = ((WiiAccelXYZCmd)cmd).getY();
 							float z = ((WiiAccelXYZCmd)cmd).getZ();
@@ -217,7 +181,7 @@ public class WiimoteView extends ViewPart {
 									settings.getNunchukButtons().add(bCmd);
 								}
 							}
-						}*/
+						}
 					}
 				}
 			}
@@ -266,10 +230,8 @@ public class WiimoteView extends ViewPart {
 		super.dispose();
 	}
 	
-	/**
-	 * Passing the focus request to the viewer's control.
-	 */
 	public void setFocus() {
 		scope.setFocus();
 	}
+	*/
 }

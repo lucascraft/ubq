@@ -35,16 +35,6 @@
 
 package net.sf.ubq.ui.config;
 
-import java.io.IOException;
-
-import net.sf.xqz.engine.script.orchestror.DSLCommandEngine;
-import net.sf.xqz.engine.script.orchestror.DSLEngineClient;
-import net.sf.xqz.engine.script.orchestror.DSLOrchestror;
-import net.sf.xqz.engine.script.orchestror.OrchestrorFactory;
-import net.sf.xqz.model.temporal.Orchestror;
-import net.sf.xqz.script.utils.OrchestrorUtil;
-
-import org.eclipse.emf.common.util.URI;
 
 /**
  * Ubqt utilities
@@ -63,22 +53,22 @@ public class UbqConfGen {
 	 * 
 	 * @return newly created {@link DSLOrchestror} orchestror
 	 */
-	public DSLOrchestror createDefaultOrchestror() {
-		DSLOrchestror orchestror = OrchestrorFactory.eINSTANCE.createDSLOrchestror();
-		orchestror.setName("Sample_Orchestror");
-	
-		DSLCommandEngine engine0 = OrchestrorFactory.eINSTANCE.createDSLCommandEngine();
-		engine0.setName("Engine0");
-		
-		DSLEngineClient client = OrchestrorFactory.eINSTANCE.createDSLEngineClient();
-		
-		client.getRefCmdEngines().add(engine0);
-		
-		orchestror.getClients().add(client);
-		orchestror.getEngines().add(engine0);
-		
-		return orchestror;
-	}
+//	public DSLOrchestror createDefaultOrchestror() {
+//		DSLOrchestror orchestror = OrchestrorFactory.eINSTANCE.createDSLOrchestror();
+//		orchestror.setName("Sample_Orchestror");
+//	
+//		DSLCommandEngine engine0 = OrchestrorFactory.eINSTANCE.createDSLCommandEngine();
+//		engine0.setName("Engine0");
+//		
+//		DSLEngineClient client = OrchestrorFactory.eINSTANCE.createDSLEngineClient();
+//		
+//		client.getRefCmdEngines().add(engine0);
+//		
+//		orchestror.getClients().add(client);
+//		orchestror.getEngines().add(engine0);
+//		
+//		return orchestror;
+//	}
 	
 	/**
 	 * Save a given {@link DSLOrchestror} into the given path.
@@ -88,14 +78,14 @@ public class UbqConfGen {
 	 * 
 	 * @return persisted {@link URI}
 	 */
-	public URI saveDSLOrchestror(DSLOrchestror orchestror, String pathName) {
-		try {
-			return OrchestrorUtil.INSTANCE.saveModel2(orchestror, pathName);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		return null;
-	}
+//	public URI saveDSLOrchestror(DSLOrchestror orchestror, String pathName) {
+//		try {
+//			return OrchestrorUtil.INSTANCE.saveModel2(orchestror, pathName);
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		}
+//		return null;
+//	}
 	
 	/**
 	 * Initialize a default {@link DSLOrchestror} and dump it into the givzn path.
@@ -104,7 +94,7 @@ public class UbqConfGen {
 	 * 
 	 * @return persisted {@link URI}
 	 */
-	public URI initDefaultOrchestror(String pathName) {
-		return saveDSLOrchestror(createDefaultOrchestror(), pathName);
-	}
+//	public URI initDefaultOrchestror(String pathName) {
+//		return saveDSLOrchestror(createDefaultOrchestror(), pathName);
+//	}
 }

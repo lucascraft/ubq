@@ -22,6 +22,7 @@
                label="tuio"
                path="tuio">
          </menu>
+         <!--
          <action
                class="net.sf.ubq.draw2d.renderer.actions.LaunchTuioFMURF"
                icon="icons/ubiquisense.gif"
@@ -38,6 +39,7 @@
                style="push"
                toolbarPath="tuio">
          </action>
+         -->
          <action
                class="net.sf.ubq.draw2d.renderer.actions.LaunchTuioSimulator"
                icon="icons/tuio.png"
@@ -46,6 +48,7 @@
                style="push"
                toolbarPath="tuioSim">
          </action>
+         <!--
          <action
                class="net.sf.ubq.draw2d.renderer.actions.LaunchREACTIVISION"
                icon="icons/reactivision.jpg"
@@ -62,6 +65,7 @@
                style="push"
                toolbarPath="tuioSim">
          </action>
+         -->
       </actionSet>
    </extension>
 

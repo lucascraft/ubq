@@ -94,104 +94,110 @@ public class UBQProximaFigure extends Figure {
     
     @Override
     public void paint(Graphics graphics) {
-    	super.paint(graphics);
-
-    	graphics.pushState();
-    	
-    	int disabledAlphaOffset = (proxima.getStatus() == PROXIMA_STATUS.ACTIVATED) ? 0 : 66;
-    	
-    	
-    	graphics.setLineWidth(2);
-
-    	graphics.setForegroundColor(ColorConstants.darkGray);
-    	graphics.setBackgroundColor(ColorConstants.darkGray);
-    	
-    	float dist = this.proxima.getRadius()/2;
-    	float distX2 = this.proxima.getRadius();
-    	float distMax = this.proxima.getLimit();
-    	float angleRadians = (float) Math.toRadians(angle);
-    	
-    	//setSize((int)distX2, (int)distX2);
-    	
-       	int tX = getLocation().x + (int) distX2;
-    	int tY = getLocation().y + (int) distX2;
-    	    	
-		Vector2f vCenter = ProximaUtils.INSTANCE.rotoTranslate(0, 0, angleRadians, tX, tY);
-		
-		//
-		// Triangle "cursor"
-		//
-		Vector2f tUpLeft = ProximaUtils.INSTANCE.rotoTranslate(-10, -dist-10, angleRadians, tX, tY);
-		Vector2f tUpRight = ProximaUtils.INSTANCE.rotoTranslate(10, -dist-10, angleRadians, tX, tY);
-		Vector2f tBottom = ProximaUtils.INSTANCE.rotoTranslate(0, -dist, angleRadians, tX, tY);
-
-		graphics.setAlpha(255-disabledAlphaOffset);
-
-    	graphics.fillPolygon(
-    		new int[] { 
-    			(int) tUpLeft.x, 
-    			(int) tUpLeft.y, 
-    			(int) tUpRight.x, 
-    			(int) tUpRight.y, 
-    			(int) tBottom.x, 
-    			(int) tBottom.y
-    		}
-    	);
-    	
-		graphics.setAlpha(125-disabledAlphaOffset);
-		
-		
-		UbqColor fg = proxima.getFgColor() == null ? defaultFG : proxima.getFgColor();
-		UbqColor bg = proxima.getBgColor() == null ? defaultBG : proxima.getBgColor();
-				
-       	graphics.setForegroundColor(getColor(fg.getR(), fg.getG(), fg.getB()));
-    	graphics.setBackgroundColor(getColor(bg.getR(), bg.getG(), bg.getB()));
-
-    	graphics.fillOval(
-    		(int) (vCenter.x - dist), 
-    		(int) (vCenter.y - dist), 
-    		(int) distX2, 
-    		(int) distX2
-    	);
+    	if (graphics instanceof Graphics) {
+	    	super.paint(graphics);
 	
-    	
-	   	int lX = getLocation().x + (int) distMax;
-    	int lY = getLocation().y + (int) distMax;
-    	    	
-		Vector2f lCenter = ProximaUtils.INSTANCE.rotoTranslate(0, 0, angleRadians, lX, lY);
+	    	graphics.pushState();
+	    	
+	    	int disabledAlphaOffset = (proxima.getStatus() == PROXIMA_STATUS.ACTIVATED) ? 0 : 66;
+	    	
+	    	
+	    	graphics.setLineWidth(2);
 	
-		graphics.setLineWidth(5);
-	   	graphics.drawOval(
-	    		(int) (lCenter.x - 1.5*distX2), 
-	    		(int) (lCenter.y - 1.5*distX2), 
-	    		(int) distMax, 
-	    		(int) distMax
+	    	graphics.setForegroundColor(ColorConstants.darkGray);
+	    	graphics.setBackgroundColor(ColorConstants.darkGray);
+	    	
+	    	float dist = this.proxima.getRadius()/2;
+	    	float distX2 = this.proxima.getRadius();
+	    	float distMax = this.proxima.getLimit();
+	    	float angleRadians = (float) Math.toRadians(angle);
+	    	
+	    	//setSize((int)distX2, (int)distX2);
+	    	
+	       	int tX = getLocation().x + (int) distX2;
+	    	int tY = getLocation().y + (int) distX2;
+	    	    	
+			
+			//
+			// Triangle "cursor"
+			//
+			Vector2f tUpLeft = ProximaUtils.INSTANCE.rotoTranslate(-10, -dist-10, angleRadians, tX, tY);
+			Vector2f tUpRight = ProximaUtils.INSTANCE.rotoTranslate(10, -dist-10, angleRadians, tX, tY);
+			Vector2f tBottom = ProximaUtils.INSTANCE.rotoTranslate(0, -dist, angleRadians, tX, tY);
+	
+			graphics.setAlpha(255-disabledAlphaOffset);
+	
+	    	graphics.fillPolygon(
+	    		new int[] { 
+	    			(int) tUpLeft.x, 
+	    			(int) tUpLeft.y, 
+	    			(int) tUpRight.x, 
+	    			(int) tUpRight.y, 
+	    			(int) tBottom.x, 
+	    			(int) tBottom.y
+	    		}
 	    	);
+	    	
+			graphics.setAlpha(125-disabledAlphaOffset);
+			
+			
+			UbqColor fg = proxima.getFgColor() == null ? defaultFG : proxima.getFgColor();
+			UbqColor bg = proxima.getBgColor() == null ? defaultBG : proxima.getBgColor();
+					
+	       	graphics.setForegroundColor(getColor(fg.getR(), fg.getG(), fg.getB()));
+	    	graphics.setBackgroundColor(getColor(bg.getR(), bg.getG(), bg.getB()));
+	
+			Vector2f vCenter = ProximaUtils.INSTANCE.rotoTranslate(0, 0, angleRadians, tX, tY);
 
+			if (vCenter instanceof Vector2f) {
+		    	graphics.fillOval(
+		    		(int) (vCenter.x - dist), 
+		    		(int) (vCenter.y - dist), 
+		    		(int) distX2, 
+		    		(int) distX2
+		    	);
+			}
+	    	
+		   	int lX = getLocation().x + (int) distMax;
+	    	int lY = getLocation().y + (int) distMax;
+	    	    	
+			Vector2f lCenter = ProximaUtils.INSTANCE.rotoTranslate(0, 0, angleRadians, lX, lY);
+		
+			if (lCenter instanceof Vector2f) {
 
-    	graphics.setAlpha(255-disabledAlphaOffset);
-
-      	graphics.setForegroundColor(ColorConstants.black);
-    	graphics.setBackgroundColor(ColorConstants.black);
-
-    	String txt = " Val : " + proxima.getRange().getVal();
-    	
-    	GC gc = new GC(Display.getDefault());
-    	Point pt = gc.textExtent(txt);
-    	gc.dispose();
-    	
-    	if (proxima.getRange() != null) {
-	    	graphics.drawText(
-	    		txt, 
-	    		(int) vCenter.x - pt.x/2, 
-	    		(int) vCenter.y - pt.y/2
-	    	);
+				graphics.setLineWidth(5);
+			   	graphics.drawOval(
+			    		(int) (lCenter.x - 1.5*distX2), 
+			    		(int) (lCenter.y - 1.5*distX2), 
+			    		(int) distMax, 
+			    		(int) distMax
+			    	);
+			}
+			
+	    	graphics.setAlpha(255-disabledAlphaOffset);
+	
+	      	graphics.setForegroundColor(ColorConstants.black);
+	    	graphics.setBackgroundColor(ColorConstants.black);
+	
+	    	String txt = " Val : " + proxima.getRange().getVal();
+	    	
+	    	GC gc = new GC(Display.getDefault());
+	    	Point pt = gc.textExtent(txt);
+	    	gc.dispose();
+	    	
+	    	if (proxima.getRange() != null) {
+		    	graphics.drawText(
+		    		txt, 
+		    		(int) vCenter.x - pt.x/2, 
+		    		(int) vCenter.y - pt.y/2
+		    	);
+	    	}
+	    	graphics.setLineWidth(1);
+	
+	    	graphics.setForegroundColor(ColorConstants.black);
+	    	graphics.setBackgroundColor(ColorConstants.black);
+	    
+	    	graphics.popState();
     	}
-    	graphics.setLineWidth(1);
-
-    	graphics.setForegroundColor(ColorConstants.black);
-    	graphics.setBackgroundColor(ColorConstants.black);
-    
-    	graphics.popState();
-}
+	}
 }
