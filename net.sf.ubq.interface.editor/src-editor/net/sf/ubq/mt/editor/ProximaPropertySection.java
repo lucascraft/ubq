@@ -97,11 +97,11 @@ public class ProximaPropertySection extends AbstractPropertySection {
 					Color nFG = UbqUtils.INSTANCE.getcolor(fg);
 					Color nBG = UbqUtils.INSTANCE.getcolor(bg);
 					
-					if(nFG != null) {
-						gc.setBackground(nFG);
+					if(nBG != null) {
+						gc.setBackground(nBG);
 					}
 					if(nFG != null) {
-						gc.setForeground(nBG);
+						gc.setForeground(nFG);
 					}
 					
 					gc.fillOval(rect.width/2-radius/2, rect.height/2-radius/2, radius, radius);
